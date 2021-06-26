@@ -72,28 +72,30 @@ const Universities = () => {
                     <button>Search</button>
                 </SearchForm>
             </Container>
-            <Container>
-                <Table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Country</th>
-                            <th>URL</th>
-                            <th>Starred</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {universitiesList.map((university) => (
-                            <tr key={university.name}>
-                                <td>{university.name}</td>
-                                <td>{university.country}</td>
-                                <td>{university.domains[0]}</td>
-                                <td></td>
+            {universitiesList.length > 0 && (
+                <Container>
+                    <Table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Country</th>
+                                <th>URL</th>
+                                <th>Starred</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </Table>
-            </Container>
+                        </thead>
+                        <tbody>
+                            {universitiesList.map((university) => (
+                                <tr key={university.name}>
+                                    <td>{university.name}</td>
+                                    <td>{university.country}</td>
+                                    <td>{university.domains[0]}</td>
+                                    <td></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                </Container>
+            )}
         </div>
     );
 };
