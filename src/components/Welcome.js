@@ -56,11 +56,12 @@ const WelcomeContainer = styled.div`
     }
 `;
 
-const Welcome = () => {
+const Welcome = ({ changeRoute }) => {
     const fullNameInputEl = React.useRef(null);
     const onSubmit = (event) => {
         event.preventDefault();
         localStorage.setItem('fullName', fullNameInputEl.current.value);
+        changeRoute();
     };
     return (
         <>
