@@ -79,6 +79,7 @@ const Universities = () => {
                             <tr>
                                 <th>Name</th>
                                 <th>Country</th>
+                                <th>State / Province</th>
                                 <th>URL</th>
                                 <th>Starred</th>
                             </tr>
@@ -88,6 +89,9 @@ const Universities = () => {
                                 <tr key={university.name}>
                                     <td>{university.name}</td>
                                     <td>{university.country}</td>
+                                    <td>
+                                        {university['state-province'] || 'N/A'}
+                                    </td>
                                     <td>{university.domains[0]}</td>
                                     <td></td>
                                 </tr>
