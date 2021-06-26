@@ -46,9 +46,9 @@ const Universities = () => {
     const onSearchSubmit = (event) => {
         event.preventDefault();
         const query = searchInputEl.current.value;
-        const url = `http://universities.hipolabs.com/search?name=${encodeURIComponent(
-            query
-        )}`;
+        const url = `${
+            window.location.protocol
+        }//universities.hipolabs.com/search?name=${encodeURIComponent(query)}`;
         fetch(url)
             .then((response) => {
                 if (response.ok) {
